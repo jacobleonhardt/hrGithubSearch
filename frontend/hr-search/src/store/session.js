@@ -19,11 +19,18 @@ const getBySearch = (data) => ({
 // Thunks
 
 export const initialContent = () => async(dispatch) => {
-    const request = await fetch('/')
-    const result = request.json()
+    const request = await fetch('https://api.github.com/users/jacobleonhardt')
 
-    dispatch(getInitial(result))
-    return result
+        console.log('$$$$$', request)
+        const result = await request.json()
+        console.log('@@@@@', result)
+
+    if(request.ok) {
+        dispatch(getInitial(result))
+        return result
+    } else {
+        throw request.error
+    }
 }
 
 // Reducer
@@ -31,9 +38,9 @@ export const initialContent = () => async(dispatch) => {
 export default function reducer(state = [], action) {
     switch(action.type) {
         case GET_INITIAL:
-            return [...action.payload]
+            return [{...action.payload}]
         case GET_BY_SEARCH:
-            return [...action.payload]
+            return [{...action.payload}]
         default:
             return state
     }

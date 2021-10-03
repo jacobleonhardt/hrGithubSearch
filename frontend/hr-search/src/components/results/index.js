@@ -1,13 +1,17 @@
-import React from 'react'
-import { useDispatch, useSelector } from 'react-redux';
+import React, { useEffect } from 'react'
 
-const Results = () => {
-
-    const results = useSelector(state => state.results)
+const Results = ({ profile }) => {
 
     return (
         <div>
-            <p>{results}</p>
+            <p>{profile.login}</p>
+            <img src={profile.avatar_url} />
+            <p>{profile.location}</p>
+            <p>{profile.name}</p>
+            <p>{profile.email}</p>
+            <p>{profile.public_repos}</p>
+            <p>{profile.created_at}</p>
+            <p>{profile.updated_at}</p>
         </div>
     )
 }
