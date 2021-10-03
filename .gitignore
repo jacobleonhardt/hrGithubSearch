@@ -1,0 +1,4 @@
+node_module
+.flaskenv
+build
+.DS_Store
