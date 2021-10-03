@@ -8,11 +8,11 @@ app.config.from_object(Config)
 
 @app.route('/')
 def hello():
-    req = requests.get('https://api.github.com/users/octocat')
+    req = requests.get(f'https://api.github.com/users/{app.config["GITUSERNAME"]}')
     response = req.json()
-    return f'<h1>{response.id}, {response.name}, {response.email}, {response.url},</h1>'
+    return f'<p>{response["url"]}, {response["name"]}, {response["email"]}</p>'
 
 
-@app.route('/<int:id>')
-def test(id):
-    return f'HELLO! {id}'
+# @app.route('/<int:id>')
+# def test(id):
+#     return f'HELLO! {id}'
