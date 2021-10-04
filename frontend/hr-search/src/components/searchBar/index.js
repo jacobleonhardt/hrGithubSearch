@@ -47,7 +47,9 @@ const SearchBar = () => {
                             onChange={e => setSearchTerm(e.target.value)}></input>
                     </label>}
                 </div>
-                <button type="submit">Search</button>
+                <div id="submit-button">
+                    <button type="submit">Search</button>
+                </div>
             </form>
         </div>
     )

@@ -1,6 +1,5 @@
 #searchbar {
-    margin-top: 4%;
-    margin-bottom: 4%;
+    margin: 4% auto;
 }
 
 form {
@@ -11,15 +10,35 @@ form {
 
 #search-type {
     font-size: 18px;
+    padding: 0px 8px;
 }
 
 #search-type label{
-    /* display: inline; */
     font-size: 16px;
 }
 
-#search-field input {
-    width: 100%;
+#search-field input, #submit-button button {
     padding: 5px;
+    margin: 0px 8px;
     font-size: 16px;
+}
+
+
+#submit-button button {
+    border: 2px solid #000;
+    border-radius: 25px;
+    font-size: 18px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 700;
+    color: #000;
+    background-color: rgba(0, 0, 0, .0);
+    padding: 4px 12px;
+}
+
+#submit-button button:hover {
+    background-color: #147BA5;
+    border-color: #147BA5;
+    color: #fff;
+    cursor: pointer;
+    transition: .5s;
 }
