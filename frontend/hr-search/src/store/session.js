@@ -1,9 +1,8 @@
 import { Octokit } from "@octokit/core";
 
 const GITTOKEN = process.env.TOKEN
-const GITUSER = process.env.USERNAME
 
-const octokit = new Octokit({ auth: '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' });
+const octokit = new Octokit({ auth: `${GITTOKEN}` });
 
 // Constants
 
