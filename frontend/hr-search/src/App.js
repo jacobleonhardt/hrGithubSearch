@@ -22,11 +22,14 @@ function App() {
         <div id="greeting">
           <h1>Git the Right Guy</h1>
           <h2>Human Resource Portal for Github Applicants</h2>
+          <SearchBar />
         </div>
-        <SearchBar />
-        {results.map(result => {
-          return <Results profile={result}/>
-        })}
+        <div id="search-results">
+          <h3>Results</h3>
+          {results.map(result => {
+            return <Results profile={result} key={result.id}/>
+          })}
+        </div>
       </main>
     </div>
   );

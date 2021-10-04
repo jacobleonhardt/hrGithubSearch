@@ -1,14 +1,17 @@
 import React, { useState } from 'react'
+import { useDispatch } from 'react-redux'
+import { searchContent } from '../../store/session'
 import './searchbar.css'
 
 const SearchBar = () => {
+
+    const dispatch = useDispatch()
     const [searchType, setSearchType] = useState(false)
+    const [searchTerm, setSearchTerm] = useState('')
 
-    const handleSubmit = (e, searchTerm) => {
+    const handleSubmit = (e) => {
         e.preventDefault()
-        if(searchType) { // if searchType is true, then searchTerm is email
-
-        }
+        dispatch(searchContent(searchTerm))
     }
 
     const changeSearch = () => {
@@ -36,10 +39,12 @@ const SearchBar = () => {
                 <div id="search-field">
                 {!searchType ?
                     <label>
-                        <input type="text" placeholder="Real Name"></input>
+                        <input type="text" placeholder="Real Name"
+                            onChange={e => setSearchTerm(e.target.value)}></input>
                     </label>:
                     <label>
-                        <input type="email" placeholder="Email"></input>
+                        <input type="email" placeholder="Email"
+                            onChange={e => setSearchTerm(e.target.value)}></input>
                     </label>}
                 </div>
                 <button type="submit">Search</button>

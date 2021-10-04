@@ -1,3 +1,10 @@
+import { Octokit } from "@octokit/core";
+
+const GITTOKEN = process.env.TOKEN
+const GITUSER = process.env.USERNAME
+
+const octokit = new Octokit({ auth: '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' });
+
 // Constants
 
 const GET_INITIAL = 'session/GET_INITIAL'
@@ -19,15 +26,38 @@ const getBySearch = (data) => ({
 // Thunks
 
 export const initialContent = () => async(dispatch) => {
-    const request = await fetch('https://api.github.com/users/jacobleonhardt')
-    const result = await request.json()
+    const { data } = await octokit.request("GET /users")
+    // const result = await request.json()
 
-    if(request.ok) {
-        dispatch(getInitial(result))
-        return result
+    dispatch(getInitial(data))
+    return data
+    // if(request.ok) {
+    //     dispatch(getInitial(request))
+    //     return request
+    // }
+}
+
+export const searchContent = (searchTerm) => async(dispatch) => {
+    let request;
+    console.log('$$$$$', GITTOKEN)
+
+
+    if(searchTerm.includes('@')){
+        request = await octokit.request("GET /users", {
+            email: `${searchTerm}`
+        })
     } else {
-        throw request.error
+        request = await octokit.request("GET /users", {
+            name: `${searchTerm}`
+        })
+        console.log('&&&&&', request)
     }
+
+    const result = await request.json()
+    console.log('@@@@@', result)
+    dispatch(getBySearch(result))
+    return result
+
 }
 
 // Reducer
@@ -35,9 +65,9 @@ export const initialContent = () => async(dispatch) => {
 export default function reducer(state = [], action) {
     switch(action.type) {
         case GET_INITIAL:
-            return [{...action.payload}]
+            return [...action.payload]
         case GET_BY_SEARCH:
-            return [{...action.payload}]
+            return [...action.payload]
         default:
             return state
     }

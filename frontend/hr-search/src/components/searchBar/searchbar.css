@@ -1,10 +1,6 @@
 #searchbar {
-    width: 100%;
-    padding: 8% 1%;
-    background: linear-gradient(rgba(255,255,255,.25), rgba(255,255,255,.25)), url('../../images/git-the-right-guy.jpg');
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
+    margin-top: 4%;
+    margin-bottom: 4%;
 }
 
 form {
@@ -12,10 +8,6 @@ form {
     justify-content: center;
     align-items: center;
 }
-
-/* form div {
-    padding: 3%;
-} */
 
 #search-type {
     font-size: 18px;
