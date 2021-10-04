@@ -40,6 +40,7 @@ export const searchContent = (searchTerm) => async(dispatch) => {
     }
 
     const result = await request.json()
+    console.log('############', result)
 
     // Part Two: Use User's Login to Find User's Profile Info
     result.items.forEach( async(item) => {

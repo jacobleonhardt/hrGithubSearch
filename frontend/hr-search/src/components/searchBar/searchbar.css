@@ -42,3 +42,14 @@ form {
     cursor: pointer;
     transition: .5s;
 }
+
+@media screen and (max-width: 767px) {
+    form {
+        display: block;
+    }
+
+    #search-field {
+        padding: 2% 0;
+    }
+
+  }
