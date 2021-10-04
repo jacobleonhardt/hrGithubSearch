@@ -58,7 +58,7 @@ h4 {
 h5 {
   font-size: 1.2em;
   opacity: .9;
-  margin-bottom: 8px;
+  margin: 8px 0;
 }
 
 @media (prefers-reduced-motion: no-preference) {

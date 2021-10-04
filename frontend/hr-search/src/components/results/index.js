@@ -3,6 +3,9 @@ import './results.css'
 
 const Results = ({ profile }) => {
 
+    const openProfile = () => {
+        window.open(profile.html_url, '_blank')
+    }
     return (
         <section className="profile">
             <div className="left">
@@ -10,7 +13,7 @@ const Results = ({ profile }) => {
             </div>
             <div className="right">
                 <h4>{profile.name ? <>{profile.name}</> : <>No Name Listed</>}</h4>
-                <h5><ion-icon name="logo-github"></ion-icon> {profile.login}</h5>
+                <h5>{profile.login}</h5>
                 <p><span className="profile-label"><ion-icon name="home-outline"></ion-icon></span>
                     {profile.location ? <span>{profile.location}</span>
                     : <span className="no-info">No Location Listed</span>}</p>
@@ -23,6 +26,7 @@ const Results = ({ profile }) => {
                     {profile.created_at ? <>{profile.created_at.slice(0,10)}</> : <>No Creation Date Listed</>}</p>
                 <p><span className="profile-label"><ion-icon name="pulse-outline"></ion-icon></span>
                     {profile.updated_at ? <>{profile.updated_at.slice(0,10)}</> : <>No Update Listed</>}</p>
+                <button className="profile-button" onClick={openProfile}><ion-icon name="logo-github"></ion-icon> View Profile</button>
             </div>
         </section>
     )
