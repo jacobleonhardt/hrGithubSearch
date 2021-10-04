@@ -39,3 +39,16 @@ button.profile-button:hover {
     cursor: pointer;
     transition: .5s;
 }
+
+
+  @media screen and (max-width: 767px) {
+    .profile {
+        display: block;
+        text-align: center;
+    }
+
+    /* .profile img {
+        max-width: 100%;
+        margin: 0 auto;
+    } */
+  }

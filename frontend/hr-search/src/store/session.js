@@ -52,6 +52,8 @@ export const searchContent = (searchTerm) => async(dispatch) => {
         throw new Error(request.message)
     }
 
+    console.log('>>>>>>>>', arr.slice(0,10))
+
     setTimeout(() => {
         dispatch(getBySearch(arr))
     }, 1000);

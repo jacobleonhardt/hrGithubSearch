@@ -8,7 +8,6 @@ import { initialContent } from './store/session'
 import './App.css';
 
 function App() {
-  const history = useHistory()
   const dispatch = useDispatch()
 
   useEffect(() => {
@@ -28,7 +27,11 @@ function App() {
         <div id="search-results">
           <h3>Results</h3>
           {results.map(result => {
-            return <Results profile={result} key={result.id}/>
+            if(result.id) {
+              return <Results profile={result} key={result.id}/>
+            } else {
+              return
+            }
           })}
         </div>
       </main>

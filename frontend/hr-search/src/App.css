@@ -28,7 +28,7 @@
 
 #search-results {
   margin: 2% auto;
-  width: 60%;
+  width: 50%;
 }
 
 h1, h2, h3, h4, h5, h6, p {
@@ -61,8 +61,20 @@ h5 {
   margin: 8px 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+@media screen and (max-width: 1240px) {
+  #search-results {
+    width: 70%;
+  }
+}
+
+@media screen and (max-width: 885px) {
+  #search-results {
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #search-results {
+    width: 100%;
   }
 }
