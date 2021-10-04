@@ -1,0 +1,33 @@
+#searchbar {
+    width: 100%;
+    padding: 8% 1%;
+    background: linear-gradient(rgba(255,255,255,.25), rgba(255,255,255,.25)), url('../../images/git-the-right-guy.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* form div {
+    padding: 3%;
+} */
+
+#search-type {
+    font-size: 18px;
+}
+
+#search-type label{
+    /* display: inline; */
+    font-size: 16px;
+}
+
+#search-field input {
+    width: 100%;
+    padding: 5px;
+    font-size: 16px;
+}

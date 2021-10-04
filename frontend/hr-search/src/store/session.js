@@ -20,10 +20,7 @@ const getBySearch = (data) => ({
 
 export const initialContent = () => async(dispatch) => {
     const request = await fetch('https://api.github.com/users/jacobleonhardt')
-
-        console.log('$$$$$', request)
-        const result = await request.json()
-        console.log('@@@@@', result)
+    const result = await request.json()
 
     if(request.ok) {
         dispatch(getInitial(result))

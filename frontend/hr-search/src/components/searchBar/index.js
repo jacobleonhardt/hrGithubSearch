@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import './searchbar.css'
 
 const SearchBar = () => {
     const [searchType, setSearchType] = useState(false)
@@ -6,7 +7,7 @@ const SearchBar = () => {
     const handleSubmit = (e, searchTerm) => {
         e.preventDefault()
         if(searchType) { // if searchType is true, then searchTerm is email
-            
+
         }
     }
 
@@ -17,18 +18,22 @@ const SearchBar = () => {
     return (
         <div id="searchbar">
             <form onSubmit={handleSubmit}>
-                <label>
-                    <input type="radio" id="name" name="name" checked={!searchType}
-                    onChange={changeSearch}>
-                    </input>
-                    Search by Name
-                </label>
-                <label>
-                    <input type="radio" id="email" name="email" checked={searchType}
-                    onChange={changeSearch}>
-                    </input>
-                    Search by Email
-                </label>
+                <div id="search-type">
+                    Search by:
+                    <label>
+                        <input type="radio" id="name" name="name" checked={!searchType}
+                        onChange={changeSearch}>
+                        </input>
+                        Name
+                    </label>
+                    <label>
+                        <input type="radio" id="email" name="email" checked={searchType}
+                        onChange={changeSearch}>
+                        </input>
+                        Email
+                    </label>
+                </div>
+                <div id="search-field">
                 {!searchType ?
                     <label>
                         <input type="text" placeholder="Real Name"></input>
@@ -36,6 +41,7 @@ const SearchBar = () => {
                     <label>
                         <input type="email" placeholder="Email"></input>
                     </label>}
+                </div>
                 <button type="submit">Search</button>
             </form>
         </div>

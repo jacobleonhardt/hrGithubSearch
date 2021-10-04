@@ -18,7 +18,11 @@ function App() {
 
   return (
     <div className="App">
-      <main className="App-header">
+      <main className="content">
+        <div id="greeting">
+          <h1>Git the Right Guy</h1>
+          <h2>Human Resource Portal for Github Applicants</h2>
+        </div>
         <SearchBar />
         {results.map(result => {
           return <Results profile={result}/>

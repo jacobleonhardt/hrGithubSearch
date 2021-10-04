@@ -1,4 +1,24 @@
 .profile {
     display: flex;
-    
+    justify-content: space-evenly;
+    align-items: center;
+    width: 70%;
+    padding: 20px;
+    font-size: 20px;
+    line-height: 24px;
+    text-align: left;
+    color: #fff;
+    background: #147BA5;
+}
+
+.profile img {
+    max-width: 250px;
+    border: 2px solid #B2BDBE;
+    border-radius: 50%;
+}
+
+.profile-label {
+    font-weight: 600;
+    color:#eee;
+    font-size: 16px;
 }
