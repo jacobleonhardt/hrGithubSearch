@@ -2,7 +2,10 @@ import { Octokit } from "@octokit/core";
 
 const GITTOKEN = process.env.TOKEN
 
-const octokit = new Octokit({ auth: `${GITTOKEN}` });
+const octokit = new Octokit({
+    auth: 'a5fc812d94a3a4d98a4903ff2b585c8f0a5e8361',
+    // baseUrl: 'https://api.github.com/',
+});
 
 // Constants
 
@@ -38,24 +41,37 @@ export const initialContent = () => async(dispatch) => {
 
 export const searchContent = (searchTerm) => async(dispatch) => {
     let request;
-    console.log('$$$$$', GITTOKEN)
+    let arr = []
 
-
+    // Part One: Find User's Login Based on SearchTerm
+    console.log('@@@@@@@@', searchTerm)
     if(searchTerm.includes('@')){
         request = await octokit.request("GET /users", {
             email: `${searchTerm}`
         })
     } else {
-        request = await octokit.request("GET /users", {
-            name: `${searchTerm}`
-        })
-        console.log('&&&&&', request)
+        const term = searchTerm.split()
+        const query = term.join('+')
+        request = await fetch(`https://api.github.com/search/users?q=${query}`)
     }
 
     const result = await request.json()
-    console.log('@@@@@', result)
-    dispatch(getBySearch(result))
-    return result
+
+    // Part Two: Use User's Login to Find User's Profile Info
+    result.items.forEach( async(item) => {
+        const find = await fetch(`https://api.github.com/users/${item.login}`)
+        const profile = await find.json()
+        arr.push(profile)
+    });
+
+    if(request.message) {
+        throw new Error(request.message)
+    }
+
+    setTimeout(() => {
+        dispatch(getBySearch(arr))
+    }, 1000);
+    return arr
 
 }
 

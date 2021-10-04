@@ -10,11 +10,11 @@ const Results = ({ profile }) => {
             </div>
             <div className="right">
                 <h4>{profile.name}</h4>
-                <h5>{profile.login}</h5>
-                <p><span className="profile-label">Location:</span> {profile.location}</p>
-                <p><span className="profile-label">Email:</span> {profile.email ? <span>{profile.email}</span>
+                <h5><ion-icon name="logo-github"></ion-icon> {profile.login}</h5>
+                <p><span className="profile-label"><ion-icon name="home-outline"></ion-icon></span> {profile.location}</p>
+                <p><span className="profile-label"><ion-icon name="mail-outline"></ion-icon></span> {profile.email ? <span>{profile.email}</span>
                     : <span className="no-info">No Email Listed</span>}</p>
-                <p><span className="profile-label">Public Repos:</span> {profile.public_repos}</p>
+                <p><span className="profile-label"><ion-icon name="documents-outline"></ion-icon></span> {profile.public_repos}</p>
                 {/* <p><span className="profile-label">Member Since:</span> {profile.created_at.slice(0,10)}</p>
                 <p><span className="profile-label">Active On:</span> {profile.updated_at.slice(0,10)}</p> */}
             </div>

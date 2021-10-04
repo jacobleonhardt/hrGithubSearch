@@ -15,6 +15,7 @@ function App() {
   }, [])
 
   const results = useSelector(state => state.results)
+  console.log('>>>>>>>>>>>', results)
 
   return (
     <div className="App">
