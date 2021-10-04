@@ -1,6 +1,5 @@
-import { Octokit } from "@octokit/core";
 
-const GITTOKEN = process.env.TOKEN
+const GITTOKEN = process.env.REACT_APP_TOKEN
 
 // Constants
 
@@ -23,7 +22,12 @@ const getBySearch = (data) => ({
 // Thunks
 
 export const initialContent = () => async(dispatch) => {
-    const request = await fetch(`https://api.github.com/users/example`)
+
+    const request = await fetch(`https://api.github.com/users/example`, {
+        headers: {
+            authorization: `token ${GITTOKEN}`
+        }
+    })
     const result = await request.json()
 
     dispatch(getInitial([result]))
@@ -36,18 +40,31 @@ export const searchContent = (searchTerm) => async(dispatch) => {
 
     // Part One: Find User's Login Based on SearchTerm
     if(searchTerm.includes('@')){
-        request = await fetch(`https://api.github.com/search/users?q=${searchTerm}`)
+        request = await fetch(`https://api.github.com/search/users?q=${searchTerm}`, {
+            headers: {
+                authorization: `token ${GITTOKEN}`
+            }
+        })
     } else {
         const term = searchTerm.split()
         const query = term.join('+')
-        request = await fetch(`https://api.github.com/search/users?q=${query}`)
+        request = await fetch(`https://api.github.com/search/users?q=${query}`, {
+            headers: {
+                authorization: `token ${GITTOKEN}`
+            }
+        })
     }
 
     const result = await request.json()
 
     // Part Two: Use User's Login to Find User's Profile Info
     result.items.forEach( async(item) => {
-        const find = await fetch(`https://api.github.com/users/${item.login}`)
+        const find = await fetch(`https://api.github.com/users/${item.login}`, {
+            method: "GET",
+            headers: {
+                authorization: `token ${GITTOKEN}`
+            }
+        })
         const profile = await find.json()
         arr.push(profile)
     });
