@@ -3,7 +3,7 @@ import { Octokit } from "@octokit/core";
 const GITTOKEN = process.env.TOKEN
 
 const octokit = new Octokit({
-    auth: 'a5fc812d94a3a4d98a4903ff2b585c8f0a5e8361',
+    auth: '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',
     // baseUrl: 'https://api.github.com/',
 });
 
