@@ -2,11 +2,6 @@ import { Octokit } from "@octokit/core";
 
 const GITTOKEN = process.env.TOKEN
 
-const octokit = new Octokit({
-    auth: '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',
-    // baseUrl: 'https://api.github.com/',
-});
-
 // Constants
 
 const GET_INITIAL = 'session/GET_INITIAL'
@@ -28,15 +23,11 @@ const getBySearch = (data) => ({
 // Thunks
 
 export const initialContent = () => async(dispatch) => {
-    const { data } = await octokit.request("GET /users")
-    // const result = await request.json()
+    const request = await fetch(`https://api.github.com/users/example`)
+    const result = await request.json()
 
-    dispatch(getInitial(data))
-    return data
-    // if(request.ok) {
-    //     dispatch(getInitial(request))
-    //     return request
-    // }
+    dispatch(getInitial([result]))
+    return [result]
 }
 
 export const searchContent = (searchTerm) => async(dispatch) => {
@@ -44,11 +35,8 @@ export const searchContent = (searchTerm) => async(dispatch) => {
     let arr = []
 
     // Part One: Find User's Login Based on SearchTerm
-    console.log('@@@@@@@@', searchTerm)
     if(searchTerm.includes('@')){
-        request = await octokit.request("GET /users", {
-            email: `${searchTerm}`
-        })
+        request = await fetch(`https://api.github.com/search/users?q=${searchTerm}`)
     } else {
         const term = searchTerm.split()
         const query = term.join('+')
