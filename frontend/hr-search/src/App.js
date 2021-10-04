@@ -1,17 +1,17 @@
 import React, { useEffect } from 'react'
-import { useDispatch, useSelector } from 'react-redux';
+import { useHistory } from 'react-router-dom'
+import { useDispatch, useSelector } from 'react-redux'
 import logo from './logo.svg';
-import SearchBar from './components/searchBar';
+import SearchBar from './components/searchBar'
 import Results from './components/results'
 import { initialContent } from './store/session'
 import './App.css';
 
 function App() {
-
+  const history = useHistory()
   const dispatch = useDispatch()
 
   useEffect(() => {
-
     dispatch(initialContent())
   }, [])
 
