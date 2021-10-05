@@ -13,20 +13,20 @@ const Results = ({ profile }) => {
                 <img src={profile.avatar_url} />
             </div>
             <div className="right">
-                <h4>{profile.name ? <>{profile.name}</> : <>No Name Listed</>}</h4>
-                <h5><span className="profile-label">aka:</span> {profile.login}</h5>
+                <h4>{profile.name ? <>{profile.name}</> : <>Name Not Available</>}</h4>
+                <h5><span className="profile-label text">aka:</span> {profile.login}</h5>
                 <p><span className="profile-label"><ion-icon name="home-outline"></ion-icon></span>
                     {profile.location ? <span>{profile.location}</span>
-                    : <span className="no-info">No Location Listed</span>}</p>
+                    : <span className="no-info">Location Not Available</span>}</p>
                 <p><span className="profile-label"><ion-icon name="mail-outline"></ion-icon></span>
                     {profile.email ? <span>{profile.email}</span>
-                    : <span className="no-info">No Email Listed</span>}</p>
-                <p><span className="profile-label"><ion-icon name="document-text-outline"></ion-icon></span>
-                    {profile.public_repos ? <>{profile.public_repos}</> : <>No Public Repos Listed</>}</p>
+                    : <span className="no-info">Email Not Available</span>}</p>
+                <p><span className="profile-label"><ion-icon name="folder-outline"></ion-icon></span>
+                    {profile.public_repos ? <>{profile.public_repos}</> : <>Public Repos Not Available</>}</p>
                 <p><span className="profile-label"><ion-icon name="person-add-outline"></ion-icon></span>
-                    {profile.created_at ? <>{profile.created_at.slice(0,10)}</> : <>No Creation Date Listed</>}</p>
+                    {profile.created_at ? <>{profile.created_at.slice(0,10)}</> : <>Creation Date Not Available</>}</p>
                 <p><span className="profile-label"><ion-icon name="pulse-outline"></ion-icon></span>
-                    {profile.updated_at ? <>{profile.updated_at.slice(0,10)}</> : <>No Update Listed</>}</p>
+                    {profile.updated_at ? <>{profile.updated_at.slice(0,10)}</> : <>Last Update Not Available</>}</p>
                 <button className="profile-button" onClick={openProfile}><ion-icon name="logo-github"></ion-icon> View Profile</button>
             </div>
         </section>

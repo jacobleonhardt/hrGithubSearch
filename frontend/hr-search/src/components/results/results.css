@@ -20,8 +20,12 @@
 .profile-label {
     font-weight: 600;
     color:#eee;
-    font-size: 18px;
+    font-size: 21px;
     padding-right: 8px;
+}
+
+.profile-label.text {
+    font-size: 16px;
 }
 
 .profile p {

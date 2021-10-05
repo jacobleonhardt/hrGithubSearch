@@ -1,6 +1,6 @@
 
 // const TOKEN = process.env.REACT_APP_CLIENT_ID
-// const SECRTET = process.env.REACT_APP_CLIENT_SECRET
+// const SECRET = process.env.REACT_APP_CLIENT_SECRET
 
 // Constants
 
