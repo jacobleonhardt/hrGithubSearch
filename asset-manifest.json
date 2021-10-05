@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/hrGithubSearch/static/css/main.7e12fd61.chunk.css",
-    "main.js": "/hrGithubSearch/static/js/main.31752a6f.chunk.js",
-    "main.js.map": "/hrGithubSearch/static/js/main.31752a6f.chunk.js.map",
+    "main.css": "/hrGithubSearch/static/css/main.8388682b.chunk.css",
+    "main.js": "/hrGithubSearch/static/js/main.2077adfb.chunk.js",
+    "main.js.map": "/hrGithubSearch/static/js/main.2077adfb.chunk.js.map",
     "runtime-main.js": "/hrGithubSearch/static/js/runtime-main.ff6667a6.js",
     "runtime-main.js.map": "/hrGithubSearch/static/js/runtime-main.ff6667a6.js.map",
-    "static/js/2.faba90a5.chunk.js": "/hrGithubSearch/static/js/2.faba90a5.chunk.js",
-    "static/js/2.faba90a5.chunk.js.map": "/hrGithubSearch/static/js/2.faba90a5.chunk.js.map",
+    "static/js/2.f5ee7906.chunk.js": "/hrGithubSearch/static/js/2.f5ee7906.chunk.js",
+    "static/js/2.f5ee7906.chunk.js.map": "/hrGithubSearch/static/js/2.f5ee7906.chunk.js.map",
     "index.html": "/hrGithubSearch/index.html",
-    "static/css/main.7e12fd61.chunk.css.map": "/hrGithubSearch/static/css/main.7e12fd61.chunk.css.map",
-    "static/js/2.faba90a5.chunk.js.LICENSE.txt": "/hrGithubSearch/static/js/2.faba90a5.chunk.js.LICENSE.txt",
+    "static/css/main.8388682b.chunk.css.map": "/hrGithubSearch/static/css/main.8388682b.chunk.css.map",
+    "static/js/2.f5ee7906.chunk.js.LICENSE.txt": "/hrGithubSearch/static/js/2.f5ee7906.chunk.js.LICENSE.txt",
     "static/media/App.css": "/hrGithubSearch/static/media/hr-form-background.a09a7d76.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.ff6667a6.js",
-    "static/js/2.faba90a5.chunk.js",
-    "static/css/main.7e12fd61.chunk.css",
-    "static/js/main.31752a6f.chunk.js"
+    "static/js/2.f5ee7906.chunk.js",
+    "static/css/main.8388682b.chunk.css",
+    "static/js/main.2077adfb.chunk.js"
   ]
 }
