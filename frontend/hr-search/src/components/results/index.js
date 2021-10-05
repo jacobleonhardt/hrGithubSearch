@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import './results.css'
 
 const Results = ({ profile }) => {
@@ -6,6 +6,7 @@ const Results = ({ profile }) => {
     const openProfile = () => {
         window.open(profile.html_url, '_blank')
     }
+
     return (
         <section className="profile">
             <div className="left">

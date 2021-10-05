@@ -46,14 +46,15 @@ export const searchContent = (searchTerm) => async(dispatch) => {
     result.items.forEach( async(item) => {
         const find = await fetch(`https://api.github.com/users/${item.login}`)
         const profile = await find.json()
-        arr.push(profile)
+        if(arr.length < 10) {
+            arr.push(profile)
+        }
     });
 
+    console.log('>>>>>>>>>', arr)
     if(request.message) {
         throw new Error(request.message)
     }
-
-    console.log('>>>>>>>>', arr.slice(0,10))
 
     setTimeout(() => {
         dispatch(getBySearch(arr))
