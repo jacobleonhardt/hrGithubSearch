@@ -7,16 +7,16 @@ This app was constructed for the HR department of an imaginary company. The clie
 - Search form.
 - Single page application, with search results displayed on the same page as the search form.
 - Results including the following information: 
-- - Username
-- - Real Name
-- - Avatar
-- - Location
-- - Email
-- - Number of Public Repos
-- - Account Creation Date
-- - Last Update Date
-- Limited results.
-- Link to User's GitHub Profile.
+  - Username
+  - Real Name
+  - Avatar
+  - Location
+  - Email
+  - Number of Public Repos
+  - Account Creation Date
+  - Last Update Date
+  Limited results.
+  Link to User's GitHub Profile.
 
 For this project, I implimented the use of the GitHub API, displayed the results via the use of React functional components, and used Redux to manage application state.
 
