@@ -1,6 +1,7 @@
 import { Octokit } from "@octokit/core"
 
-const octokit = new Octokit({ auth: `${process.env.REACT_APP_SAFE_TOKEN}`})
+const TOKEN = process.env.REACT_APP_SAFE_TOKEN
+const octokit = new Octokit({ auth: `${TOKEN}`})
 
 // Constants
 
