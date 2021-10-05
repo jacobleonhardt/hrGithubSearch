@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/hrGithubSearch/static/css/main.bc93ad9b.chunk.css",
-    "main.js": "/hrGithubSearch/static/js/main.60e01e31.chunk.js",
-    "main.js.map": "/hrGithubSearch/static/js/main.60e01e31.chunk.js.map",
+    "main.css": "/hrGithubSearch/static/css/main.e64a7fab.chunk.css",
+    "main.js": "/hrGithubSearch/static/js/main.f8e6ad51.chunk.js",
+    "main.js.map": "/hrGithubSearch/static/js/main.f8e6ad51.chunk.js.map",
     "runtime-main.js": "/hrGithubSearch/static/js/runtime-main.ff6667a6.js",
     "runtime-main.js.map": "/hrGithubSearch/static/js/runtime-main.ff6667a6.js.map",
     "static/js/2.b9724e10.chunk.js": "/hrGithubSearch/static/js/2.b9724e10.chunk.js",
     "static/js/2.b9724e10.chunk.js.map": "/hrGithubSearch/static/js/2.b9724e10.chunk.js.map",
     "index.html": "/hrGithubSearch/index.html",
-    "static/css/main.bc93ad9b.chunk.css.map": "/hrGithubSearch/static/css/main.bc93ad9b.chunk.css.map",
+    "static/css/main.e64a7fab.chunk.css.map": "/hrGithubSearch/static/css/main.e64a7fab.chunk.css.map",
     "static/js/2.b9724e10.chunk.js.LICENSE.txt": "/hrGithubSearch/static/js/2.b9724e10.chunk.js.LICENSE.txt",
     "static/media/App.css": "/hrGithubSearch/static/media/hr-form-background.a09a7d76.jpg",
     "static/media/logo.6ce24c58.svg": "/hrGithubSearch/static/media/logo.6ce24c58.svg"
@@ -16,7 +16,7 @@
   "entrypoints": [
     "static/js/runtime-main.ff6667a6.js",
     "static/js/2.b9724e10.chunk.js",
-    "static/css/main.bc93ad9b.chunk.css",
-    "static/js/main.60e01e31.chunk.js"
+    "static/css/main.e64a7fab.chunk.css",
+    "static/js/main.f8e6ad51.chunk.js"
   ]
 }
