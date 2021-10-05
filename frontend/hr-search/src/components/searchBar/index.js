@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux'
 import { searchContent } from '../../store/session'
 import './searchbar.css'
 
-const SearchBar = () => {
+const SearchBar = ({ setDirections }) => {
 
     const dispatch = useDispatch()
     const [searchType, setSearchType] = useState(false)
@@ -12,6 +12,7 @@ const SearchBar = () => {
     const handleSubmit = (e) => {
         e.preventDefault()
         dispatch(searchContent(searchTerm))
+        setDirections(false)
     }
 
     const changeSearch = () => {
