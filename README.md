@@ -29,6 +29,19 @@ This app was constructed for the HR department of an imaginary company. The clie
   Limited results.
   Link to User's GitHub Profile.
 
+### Issues and Resolutions
+
+#### Backend
+At the beginning of the project, I though constructing a backend would be useful. So I started programming a Python/Flask backend. However, after I started getting into React and Redux, and dealing with the API, I considered that I could handle the API calls and dealing with the returned data in the stores files of the project. From that point on, I focused on dealing with the API via the frontend only. The files for the backend code were in this repository at one time, but have since been removed.
+
+### OAuth
+The GitHub API does allow for users to make queries without being authenticated. However, this limits the user to 60 calls per hour. I looked into using GitHub's OAuth for this project, however, after investing a good deal of time into researching OAuth and making a few different attempts, it seemed best for the completion of the project to move forward with the basic/unauthenticated API calls.
+
+In a future version of the application, adding GitHub authentication would be a prime update feature.
+
+### Emails
+While the API call does return a key-value pair for the user's email, the email key seems to always return with a value of `null`. It seemed this might have been due to the user having a privacy setting on their GitHub account that was protecting their email address from being retruned in the API call. However, after testing this out on myself by making my email public, the email value still returned as `null`. I suspect this may also be attributed to the lack of authentication in the API calls. If so, this issue would be resolved via authentication.
+
 ### Time Expenditure
 Total Time: 14:10
 
