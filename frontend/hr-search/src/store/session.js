@@ -22,8 +22,11 @@ const getBySearch = (data) => ({
 // Thunks
 
 export const initialContent = () => async(dispatch) => {
+    const request = await fetch(`https://api.github.com/users/octocat`)
+    const result = await request.json()
 
-
+    dispatch(getInitial(result))
+    return result
 }
 
 export const searchContent = (searchTerm) => async(dispatch) => {
@@ -40,7 +43,6 @@ export const searchContent = (searchTerm) => async(dispatch) => {
     }
 
     const result = await request.json()
-    console.log('############', result)
 
     // Part Two: Use User's Login to Find User's Profile Info
     result.items.forEach( async(item) => {
@@ -51,7 +53,6 @@ export const searchContent = (searchTerm) => async(dispatch) => {
         }
     });
 
-    console.log('>>>>>>>>>', arr)
     if(request.message) {
         throw new Error(request.message)
     }
@@ -68,7 +69,7 @@ export const searchContent = (searchTerm) => async(dispatch) => {
 export default function reducer(state = [], action) {
     switch(action.type) {
         case GET_INITIAL:
-            return [...action.payload]
+            return [action.payload]
         case GET_BY_SEARCH:
             return [...action.payload]
         default:

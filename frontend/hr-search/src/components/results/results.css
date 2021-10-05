@@ -20,8 +20,12 @@
 .profile-label {
     font-weight: 600;
     color:#eee;
-    font-size: 16px;
+    font-size: 18px;
     padding-right: 8px;
+}
+
+.profile p {
+    line-height: 28px;
 }
 
 button.profile-button {
@@ -31,6 +35,7 @@ button.profile-button {
     color: #fff;
     background-color: rgba(0, 0, 0, .0);
     padding: 5px 8px;
+    margin-top: 8px;
 }
 
 button.profile-button:hover {

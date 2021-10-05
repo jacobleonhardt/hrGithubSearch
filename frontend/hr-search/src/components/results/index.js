@@ -14,7 +14,7 @@ const Results = ({ profile }) => {
             </div>
             <div className="right">
                 <h4>{profile.name ? <>{profile.name}</> : <>No Name Listed</>}</h4>
-                <h5>{profile.login}</h5>
+                <h5><span className="profile-label">aka:</span> {profile.login}</h5>
                 <p><span className="profile-label"><ion-icon name="home-outline"></ion-icon></span>
                     {profile.location ? <span>{profile.location}</span>
                     : <span className="no-info">No Location Listed</span>}</p>
