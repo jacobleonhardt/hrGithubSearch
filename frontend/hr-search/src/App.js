@@ -22,7 +22,7 @@ function App() {
       <main className="content">
         <div id="greeting">
           <h1>Git the Right Guy</h1>
-          <h2>Human Resource Portal for Github Applicants</h2>
+          <h2>Human Resource Portal for GitHub Applicants</h2>
           <SearchBar setDirections={setDirections}/>
         </div>
         <div id="search-results">

@@ -4,7 +4,7 @@ import './footer.css'
 const Footer = () => {
     return (
         <footer>
-            <p>©2021 Git the Right Guy Staffing Resources, LLC</p>
+            <p>©2021 Git the Right Guy, LLC</p>
         </footer>
     )
 }
