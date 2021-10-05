@@ -1,7 +1,18 @@
 # Git the Right Guy
-## Human Resource Portal for GitHub Applicants 
+Human Resource Portal for GitHub Applicants 
 
-## The Gist
+## Stack
+### Frontend
+- JavaScript
+- React
+- Redux
+- CSS
+
+### Third-Party
+- GitHub API
+
+## About
+### Deliverables
 This app was constructed for the HR department of an imaginary company. The client needed the ability to find GitHub users based on their real names or email addresses. Other requirments included, but were not limited to: 
 - Use of a modenr JS framework.
 - Search form.
@@ -18,12 +29,6 @@ This app was constructed for the HR department of an imaginary company. The clie
   Limited results.
   Link to User's GitHub Profile.
 
-For this project, I implimented the use of the GitHub API, displayed the results via the use of React functional components, and used Redux to manage application state.
+### Time Expenditure
 
-## Stack
 
-### Frontend
-- JavaScript
-- React
-- Redux
-- CSS
