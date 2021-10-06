@@ -1,11 +1,13 @@
 import React from 'react'
 import './results.css'
 
-const Results = ({ profile }) => {
+const Results = ({ profile, email }) => {
 
     const openProfile = () => {
         window.open(profile.html_url, '_blank')
     }
+
+    console.log('###########', profile)
 
     return (
         <section className="profile">
@@ -19,7 +21,7 @@ const Results = ({ profile }) => {
                     {profile.location ? <span>{profile.location}</span>
                     : <span className="no-info">Location Not Available</span>}</p>
                 <p><span className="profile-label"><ion-icon name="mail-outline"></ion-icon></span>
-                    {profile.email ? <span>{profile.email}</span>
+                    {email ? <span>{email}</span>
                     : <span className="no-info">Email Not Available</span>}</p>
                 <p><span className="profile-label"><ion-icon name="folder-outline"></ion-icon></span>
                     {profile.public_repos ? <>{profile.public_repos}</> : <>Public Repos Not Available</>}</p>
