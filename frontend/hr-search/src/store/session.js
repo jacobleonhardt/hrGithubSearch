@@ -1,7 +1,6 @@
-import { Octokit } from "@octokit/core"
 
-const TOKEN = process.env.REACT_APP_SAFE_TOKEN
-const octokit = new Octokit({ auth: `${TOKEN}`})
+// const TOKEN = process.env.REACT_APP_CLIENT_ID
+// const SECRET = process.env.REACT_APP_CLIENT_SECRET
 
 // Constants
 
@@ -23,14 +22,11 @@ const getBySearch = (data) => ({
 // Thunks
 
 export const initialContent = () => async(dispatch) => {
-    // const request = await fetch(`https://api.github.com/users/octocat`)
-    const { data } = await octokit.request("/user");
+    const request = await fetch(`https://api.github.com/users/octocat`)
+    const result = await request.json()
 
-    console.log('>>>>>>>>>>>>>>', data)
-    // const result = await request.json()
-
-    dispatch(getInitial(data))
-    return data
+    dispatch(getInitial(result))
+    return result
 }
 
 export const searchContent = (searchTerm) => async(dispatch) => {
@@ -50,12 +46,10 @@ export const searchContent = (searchTerm) => async(dispatch) => {
 
     // Part Two: Use User's Login to Find User's Profile Info
     result.items.forEach( async(item) => {
-        // const find = await fetch(`https://api.github.com/users/${item.login}`)
-        console.log('>>>>>>>>>>>>>>>>>', item.login)
-        const { data } = await octokit.request(`GET /users/${item.login}`);
-        // const profile = await find.json()
+        const find = await fetch(`https://api.github.com/users/${item.login}`)
+        const profile = await find.json()
         if(arr.length < 10) {
-            arr.push(data)
+            arr.push(profile)
         }
     });
 
