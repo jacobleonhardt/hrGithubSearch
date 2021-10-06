@@ -2,5 +2,6 @@ import os
 
 
 class Config(object):
-    GITUSERNAME = os.environ.get("USERNAME")
-    GITTOKEN = os.environ.get("TOKEN")
+    GITHUB_CLIENT = os.environ.get("GITHUB_CLIENT_ID")
+    GITHUB_SECRET = os.environ.get("GITHUB_CLIENT_SECRET")
+    AUTH_TOKEN = os.environ.get("SAFE_TOKEN")
