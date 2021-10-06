@@ -1,7 +1,3 @@
-
-// const TOKEN = process.env.REACT_APP_CLIENT_ID
-// const SECRET = process.env.REACT_APP_CLIENT_SECRET
-
 // Constants
 
 const GET_INITIAL = 'session/GET_INITIAL'
@@ -48,11 +44,8 @@ export const searchContent = (searchTerm) => async(dispatch) => {
     result.items.forEach( async(item) => {
         const find = await fetch(`https://api.github.com/users/${item.login}`)
         const profile = await find.json()
-        const event = await fetch(`https://api.github.com/users/${item.login}/events/public`)
-        const obj = await event.json()
-        const email = obj[1].payload.commits[0].author.email
         if(arr.length < 10) {
-            arr.push({ profile, email })
+            arr.push(profile)
         }
     });
 
