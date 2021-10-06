@@ -1,7 +1,10 @@
 from flask import Flask, request, g, session, redirect, url_for
 from flask_github import GitHub
 from .config import Config
-import requests
+
+from sqlalchemy import create_engine, Column, Integer, String
+from sqlalchemy.orm import scoped_session, sessionmaker
+from sqlalchemy.ext.declarative import declarative_base
 
 app = Flask(__name__)
 app.config.from_object(Config)
@@ -11,10 +14,6 @@ github = GitHub(app)
 @app.route('/login')
 def login():
     return github.authorize()
-    # print('### BACKEND ###')
-    # req = requests.get(f'https://api.github.com/users/{app.config["GITUSERNAME"]}')
-    # response = req.json()
-    # return f'<p>{response["url"]}, {response["name"]}, {response["email"]}</p>'
 
 
 @app.route('/github-callback')

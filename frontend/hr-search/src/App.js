@@ -17,6 +17,7 @@ function App() {
 
   const results = useSelector(state => state.results)
 
+  console.log('>>>>>>>>>>', results)
   return (
     <div className="App">
       <main className="content">
@@ -33,6 +34,8 @@ function App() {
           {results.length ? results.map(result => {
             if(result.id) {
               return <Results profile={result} key={result.id}/>
+            } else if (result.profile.id) {
+              return <Results profile={result.profile} email={result.email} key={result.id}/>
             } else if (result.message) {
               return <Error message={result.message} />
             } else {
