@@ -40,10 +40,10 @@ The GitHub API does allow for users to make queries without being authenticated.
 In a future version of the application, adding GitHub authentication would be a prime update feature.
 
 ### Emails
-While the API call does return a key-value pair for the user's email, the email key seems to always return with a value of `null`. It seemed this might have been due to the user having a privacy setting on their GitHub account that was protecting their email address from being retruned in the API call. However, after testing this out on myself by making my email public, the email value still returned as `null`. I suspect this may also be attributed to the lack of authentication in the API calls. If so, this issue would be resolved via authentication.
+While the API call does return a key-value pair for the user's email, the email key seems to always return with a value of `null`. It seemed this might have been due to the user having a privacy setting on their GitHub account that was protecting their email address from being retruned in the API call. However, after testing this out on myself by making my email public, the email value still returned as `null`. After some further research, it can be done in unauthenticaed apps, but a secondary call is required.
 
 ### Time Expenditure
-Total Time: 14:10
+Total Time: 17:10
 
 Saturday: 0:59
 - Set up repo
@@ -67,8 +67,9 @@ Monday: 6:51
 - Code querying function for making calls to GitHub API
 - Further research OAuth for GitHub API
 
-Tuesday: 44
+Tuesday: 3:44
 - Style edits
 - Include message for if no results are found
+- Further research OAuth
+- Attempted `/events/public` to retrieve emails. (Successful, but caused addition issues.)
 - Write documentation (this time is not included in overall time expediture)
-
